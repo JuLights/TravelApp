@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelApp.Views.GetStartedPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             BackgroundImageSource="main.svg"
+             Title="GetStartedPage">
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="Transparent" StatusBarStyle="Default"/>
+    </ContentPage.Behaviors>
+    
+    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" Padding="0">
+        <HorizontalStackLayout HorizontalOptions="Start" Padding="24,18.5,0,0">
+            <HorizontalStackLayout HorizontalOptions="Start">
+                <Image Source="group2.svg" Margin="0,0,220,0"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout HorizontalOptions="End" VerticalOptions="Center">
+                <Image Source="manicon.svg" HorizontalOptions="End"/>
+                <Image Source="searchicon.svg" Margin="0,0,0,8"/>
+            </HorizontalStackLayout>
+        </HorizontalStackLayout>
+
+
+        <HorizontalStackLayout HorizontalOptions="Center" Padding="0,40,0,0">
+            <Image Source="littleman.svg"/>
+        </HorizontalStackLayout>
+        <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="0,25,0,0">
+            <Label Text="&lt;8m" FontSize="40" HorizontalTextAlignment="Center" FontFamily="AvenirNextRegular" TextColor="#FFFFFF"/>
+            <Label Text="tourists per year" FontAttributes="Bold" FontSize="16" FontFamily="AvenirNextRegular" TextColor="#FFFFFF"/>
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout Padding="5,40,5,0">
+            <Image Source="map.svg" WidthRequest="363" HeightRequest="225"/>
+        </HorizontalStackLayout>
+
+        <toolkit:DockLayout Padding="0,212,0,0">
+            <Button Text="Get Started ->" Clicked="Button_Clicked" FontFamily="AvenirNextRegular" FontAttributes="Bold" FontSize="18" HeightRequest="60" CornerRadius="100" MinimumWidthRequest="500" toolkit:DockLayout.DockPosition="Bottom" VerticalOptions="End"/>
+        </toolkit:DockLayout>
+        
+
+        <!--<VerticalStackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" Padding="1,200,1,0">
+            
+        </VerticalStackLayout>-->
+    </VerticalStackLayout>
+</ContentPage>

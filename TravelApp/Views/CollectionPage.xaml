@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelApp.Views.CollectionPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:TravelApp.ViewModels"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+             Title="CollectionPage">
+
+    <ContentPage.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="Transparent" StatusBarStyle="LightContent" />
+    </ContentPage.Behaviors>
+    
+    <VerticalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+        <HorizontalStackLayout HorizontalOptions="Start" Padding="24,18.5,0,0">
+            <Image Source="group.svg"/>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Start" Padding="25,25,0,0">
+            <Image Source="vector.svg"/>
+        </HorizontalStackLayout>
+        <VerticalStackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="25,10,5,0">
+            <Label Text="because" FontSize="30" WidthRequest="150" HorizontalOptions="Start" FontFamily="AvenirNextRegular" FontAttributes="Bold"/>
+            <Label Text="bali" TextColor="Blue" FontSize="30" WidthRequest="150" HorizontalOptions="Start" FontFamily="AvenirNextRegular" FontAttributes="Bold"/>
+            <Label Text="is always a good idea" FontSize="30" WidthRequest="150" HorizontalOptions="Start" FontFamily="AvenirNextRegular" FontAttributes="Bold"/>
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout Padding="25,25,25,0">
+            <Label WidthRequest="250" FontFamily="AvenirNextRegular" TextColor="#A98675" Text="There is no other place like Bali in this world. Just enjoy it!" />
+            <Image Margin="50,0,0,0" Source="arrowbutton.svg"/>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Padding="5,0,5,0">
+            <CollectionView ItemsSource="{Binding BaliExcitements}"
+                          HorizontalOptions="CenterAndExpand"
+                          WidthRequest="400"
+                          BackgroundColor="Transparent"
+                            SelectionMode="Single"
+                            x:Name="collView">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding Name}" VerticalTextAlignment="Center" FontFamily="AvenirNextRegular" FontAttributes="Bold" FontSize="15" TextColor="DarkGrey" Padding="10,5,0,0"/>
+                            <!--<Frame CornerRadius="20"
+                               HeightRequest="50"
+                               VerticalOptions="Center"
+                               Padding="5,0,5,0"
+                               >
+                                
+                            </Frame>-->
+                        </HorizontalStackLayout>
+                        
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </HorizontalStackLayout>
+
+        <ScrollView Padding="0,20,0,0">
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Grid ColumnSpacing="7" RowSpacing="5" Padding="10,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <!--<RowDefinition Height="*"></RowDefinition>-->
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                    <Image Grid.Row="0" Grid.Column="0" Margin="0,0,0,110" RotationY="180" Source="surfing.svg"/>
+                    <HorizontalStackLayout Grid.Row="0" HorizontalOptions="StartAndExpand" Padding="10,35,0,0" VerticalOptions="Center">
+                        <Image Source="surfingicon.svg"/>
+                        <Label Text="surfing" Padding="5,0,0,0" FontFamily="AvenirNextRegular" FontSize="16" FontAttributes="Bold" TextColor="#FFFFFF" />
+                    </HorizontalStackLayout>
+
+                    <Image Grid.Row="0" Grid.Column="1" VerticalOptions="Start" Source="volcano.svg"/>
+                    <HorizontalStackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Padding="10,100,0,0">
+                        <Image  Source="volcanoicon.svg"/>
+                        <Label Text="bali volcano" Padding="5,0,0,0" FontFamily="AvenirNextRegular" FontSize="16" TextColor="White"/>
+                    </HorizontalStackLayout>
+
+                    <Image Grid.Row="0" Grid.Column="0" VerticalOptions="End" Source="zoo.svg"/>
+                    <HorizontalStackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="End" Padding="10,0,0,10">
+                        <Image  Source="zooicon.svg"/>
+                        <Label Text="zoo" Padding="5,0,0,0" FontSize="16" FontFamily="AvenirNextRegular" FontAttributes="Bold" TextColor="White"/>
+                    </HorizontalStackLayout>
+                    
+                    
+                    <AbsoluteLayout Grid.Row="0" Grid.Column="1" Margin="0,130,0,0">
+                        <Image Margin="0,0,100,0" Grid.Row="1" Grid.Column="1" Source="ricefields.svg"/>
+                        <HorizontalStackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="StartAndExpand" Padding="10,160,0,5" VerticalOptions="End">
+                            <Image Source="fieldsicon.svg"/>
+                            <Label Text="rice fields" Padding="5,0,0,0" FontSize="16" FontFamily="AvenirNextRegular" FontAttributes="Bold" TextColor="#FFFFFF" />
+                        </HorizontalStackLayout>
+
+                        <Image Margin="115,0,0,0" Grid.Row="1" Grid.Column="1" Source="diving.svg"/>
+                        <HorizontalStackLayout Margin="110,0,0,0" Grid.Row="1" Grid.Column="1" HorizontalOptions="StartAndExpand" Padding="10,160,0,5" VerticalOptions="End">
+                            <Image Source="divingicon.svg" VerticalOptions="End"/>
+                            <Label Padding="5,0,0,0" FontSize="16" FontFamily="AvenirNextRegular" FontAttributes="Bold" Text="diving" TextColor="#FFFFFF" />
+                        </HorizontalStackLayout>
+                    </AbsoluteLayout>
+                    
+
+
+                </Grid>
+            </HorizontalStackLayout>
+        </ScrollView>
+        
+        
+
+        
+    </VerticalStackLayout>
+
+    
+    
+    
+    
+</ContentPage>
